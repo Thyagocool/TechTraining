@@ -9,6 +9,7 @@
 ##Página de Dashboard
     - dashboard.html
         Utiliza um pouco da semantica html sendo envolvida por uma div principal que utiliza a classe container do bootstrap para melhor comportar os componentes filhos.
+        
         - Tag HEADER possui duas divisões sendo a primeira para o logo que possui uma pequena animação a segunda possui uma tag NAV que possui um redirecionamento para a página inicial.
 
         - Tag MAIN possui duas divisões, a primeira serve para comportar os componentes cards e a segunda para comportar um componente table. Ambos os componentes mostram dados da API [economia.awesomeapi].
