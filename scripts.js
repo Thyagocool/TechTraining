@@ -23,7 +23,7 @@ function listCoin(data){
     let html = '';
     for (let key in data) {
         html += `
-            <div class="card bg-light mb-3 row" style="max-width: 14rem">
+            <div class="card bg-light mb-3" style="max-width: 14rem">
                 <div class="card-header">${data[key].code}</div>
                 <div class="card-body">
                     <h5 class="card-title">${data[key].name}</h5>
