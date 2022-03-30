@@ -1,0 +1,8 @@
+.div-form {
+    padding: 20px;
+  }
+
+  .form-save {
+    display: flex;
+    flex-direction: column;
+  }

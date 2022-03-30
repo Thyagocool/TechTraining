@@ -1,120 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projeto 02</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto 02</title>
 
-    <style>
-      .div-form {
-        padding: 20px;
-      }
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css">
 
-      .form-save {
-        display: flex;
-        flex-direction: column;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="div-form">
-        <form action="" class="form-save">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <input
-                type="text"
-                class="form-control"
-                name="name"
-                placeholder="Nome"
-              />
-            </div>
-            <div class="form-group col-md-6">
-              <input
-                type="text"
-                class="form-control"
-                name="type"
-                placeholder="Tipo"
-              />
-            </div>
+</head>
+
+<body>
+  <div class="container">
+    <div class="div-form">
+      <form action="" class="form-save">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" name="name" id="name" placeholder="Nome" />
           </div>
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <input
-                type="text"
-                class="form-control"
-                name="model"
-                placeholder="Modelo"
-              />
-            </div>
-            <div class="form-group col-md-4">
-              <input
-                type="text"
-                class="form-control"
-                name="color"
-                placeholder="Cor"
-              />
-            </div>
-            <div class="form-group col-md-4">
-              <input
-                type="text"
-                class="form-control"
-                name="brand"
-                placeholder="Marca"
-              />
-            </div>
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" name="type" id="type" placeholder="Tipo" />
           </div>
-          <button type="submit" class="btn btn-primary">Adicionar Novo</button>
-        </form>
-      </div>
-      <div class="div-table">
-        <table class="table">
-          <thead class="thead-light">
-            <tr>
-              <th>id</th>
-              <th>Nome</th>
-              <th>Tipo</th>
-              <th>Modelo</th>
-              <th>Cor</th>
-              <th>Marca</th>
-            </tr>
-          </thead>
-          <tbody id="tbody"></tbody>
-        </table>
-      </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" name="model" id="model" placeholder="Modelo" />
+          </div>
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" name="color" id="color" placeholder="Cor" />
+          </div>
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" name="brand" id="brand" placeholder="Marca" />
+          </div>
+        </div>
+        <button type="submit" id="btn-add-new" class="btn btn-primary">Adicionar Novo</button>
+      </form>
     </div>
-    <script src="./models/Device.js"></script>
-    <script src="./repositories/DeviceRepository.js"></script>
-    <script>
-      const repositorio = new DeviceRepository();
+    <div class="div-table">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th>id</th>
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Modelo</th>
+            <th>Cor</th>
+            <th>Marca</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="./models/Device.js"></script>
+  <script src="./repositories/DeviceRepository.js"></script>
+  <script src="./repositories/general.js"></script>
+</body>
 
-      const devices = repositorio.listarDevices();
-
-      let tbody = document.getElementById("tbody");
-
-      for (const device of devices) {
-        let tr = tbody.insertRow();
-
-        let td_id = tr.insertCell();
-        let td_name = tr.insertCell();
-        let td_type = tr.insertCell();
-        let td_model = tr.insertCell();
-        let td_color = tr.insertCell();
-        let td_brand = tr.insertCell();
-
-        td_id.innerText = device._id;
-        td_name.innerText = device._name;
-        td_type.innerText = device._type;
-        td_model.innerText = device._model;
-        td_color.innerText = device._color;
-        td_brand.innerText = device._brand;
-      }
-    </script>
-  </body>
 </html>
