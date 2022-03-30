@@ -18,21 +18,21 @@
       <form action="" class="form-save">
         <div class="form-row">
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" name="name" id="name" placeholder="Nome" />
+            <input type="text" class="form-control" name="name" id="name" placeholder="Nome" required />
           </div>
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" name="type" id="type" placeholder="Tipo" />
+            <input type="text" class="form-control" name="type" id="type" placeholder="Tipo" required/>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
-            <input type="text" class="form-control" name="model" id="model" placeholder="Modelo" />
+            <input type="text" class="form-control" name="model" id="model" placeholder="Modelo" required/>
           </div>
           <div class="form-group col-md-4">
-            <input type="text" class="form-control" name="color" id="color" placeholder="Cor" />
+            <input type="text" class="form-control" name="color" id="color" placeholder="Cor" required/>
           </div>
           <div class="form-group col-md-4">
-            <input type="text" class="form-control" name="brand" id="brand" placeholder="Marca" />
+            <input type="text" class="form-control" name="brand" id="brand" placeholder="Marca" required/>
           </div>
         </div>
         <button type="submit" id="btn-add-new" class="btn btn-primary">Adicionar Novo</button>
@@ -56,7 +56,7 @@
   </div>
   <script src="./models/Device.js"></script>
   <script src="./repositories/DeviceRepository.js"></script>
-  <script src="./repositories/general.js"></script>
+  <script src="./repositories/DeviceGeneral.js"></script>
 </body>
 
 </html>

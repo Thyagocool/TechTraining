@@ -17,10 +17,8 @@ class DeviceRepository {
     }
 
     salvarDevice(device) {
-        console.log(device)
-        console.log(device instanceof Device)
         if (device instanceof Device) {
-            console.log('------------------------------1')
+
             this._formatarDevices()
 
             this._devices.push(device)
