@@ -1,7 +1,8 @@
 const repository = new DeviceRepository();
+const devices = repository.listDevices();
 
 function tableDevice() {
-    const devices = repository.listDevices();
+
     let tbody = document.getElementById("tbody");
 
     tbody.innerText = ""
@@ -131,4 +132,31 @@ function removeDevice(name) {
         }
     })
 
+}
+
+let searchDevice = document.getElementById('search')
+
+searchDevice.addEventListener('keyup', function (event) {
+    console.log(searchDevice.value)
+    let name = searchDevice.value
+
+    const ret = devices.filter(item => {
+        return item._name.indexOf(name) > -1
+    })
+
+    let html = `<ul class="list-search">`
+
+    for (const item of ret) {
+        html += `<li onclick="getDevice('${item._name}');clearSearch()">${item._name}</li>`
+    }
+
+    html += `</ul>`
+
+    document.getElementById("return-search").innerHTML = html
+    console.log(html)
+})
+
+function clearSearch() {
+    document.getElementById("return-search").innerHTML = ''
+    document.getElementById("search").value = ''
 }
