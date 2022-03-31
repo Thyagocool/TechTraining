@@ -22,6 +22,7 @@ class DeviceRepository {
             this._formatDevices()
 
             this._devices.push(device)
+
             localStorage.setItem('devices', JSON.stringify(this._devices))
         }
     }
@@ -38,23 +39,15 @@ class DeviceRepository {
     }
 
     removeDevice(name) {
-        // Busca os devices do localstorage
         this._formatDevices()
 
-        // Remove o device dos nossos devices
         this._devices = this._devices.filter(device => device.getName() !== name)
 
-        // Salva os devices no localstorage
         localStorage.setItem('devices', JSON.stringify(this._devices))
     }
 
     editDevice(newDevice) {
-        // Busca os devices do localstorage
         this._formatDevices()
-
-        // Edita o device dos nossos devices
-        // let index = this._devices.findIndex(device => device.getModelo() === novodevice.getModelo())
-        // this._devices[index] = novodevice
 
         this._devices = this._devices.map(device => {
             if (device.getName() === newDevice.getName()) {
@@ -64,7 +57,6 @@ class DeviceRepository {
             }
         })
 
-        // Salva os devices no localstorage
         localStorage.setItem(this._deviceKey, JSON.stringify(this._devices))
     }
 }
