@@ -1,6 +1,5 @@
-class Device{
-    constructor(id, name, type, model, color, brand){
-        this._id = id
+class Device {
+    constructor(name, type, model, color, brand) {
         this._name = name
         this._type = type
         this._model = model
@@ -8,51 +7,43 @@ class Device{
         this._brand = brand
     }
 
-    getId(){
-        return this._id
-    }
-
-    setId(name){
-        this._name = id
-    }
-
-    getName(){
+    getName() {
         return this._name
     }
 
-    setName(name){
+    setName(name) {
         this._name = name
     }
 
-    getType(){
+    getType() {
         return this._type
     }
 
-    setType(type){
+    setType(type) {
         this._type = type
     }
 
-    getModel(){
+    getModel() {
         return this._model
     }
 
-    setModel(model){
+    setModel(model) {
         this._model = model
     }
 
-    getColor(){
+    getColor() {
         return this._color
     }
 
-    setColor(color){
+    setColor(color) {
         this._color = color
     }
 
-    getBrand(){
+    getBrand() {
         return this._brand
     }
 
-    setBrand(brand){
+    setBrand(brand) {
         this._brand = brand
     }
 }

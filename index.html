@@ -14,49 +14,64 @@
 
 <body>
   <div class="container">
+
     <div class="div-form">
-      <form action="" class="form-save">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <input type="text" class="form-control" name="name" id="name" placeholder="Nome" required />
+      <form action="" class="form-save" id="form-save">
+        <fieldset>
+          <legend for="">Cadastro de Dispositivos</legend>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" name="name" id="name" placeholder="Nome" required />
+            </div>
+            <div class="form-group col-md-6">
+              <!-- <input type="text" class="form-control" name="type" id="type" placeholder="Tipo" required /> -->
+              <select name="type" id="type" class="form-control">
+                <option value=""></option>
+                <option value="SMARTPHONE">SMARTPHONE</option>
+                <option value="TABLET">TABLET</option>
+                <option value="IPAD">IPAD</option>
+                <option value="NETBOOK">NETBOOK</option>
+                <option value="NOTEBOOK">NOTEBOOK</option>
+              </select>
+            </div>
           </div>
-          <div class="form-group col-md-6">
-            <input type="text" class="form-control" name="type" id="type" placeholder="Tipo" required/>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" name="model" id="model" placeholder="Modelo" required />
+            </div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" name="color" id="color" placeholder="Cor" required />
+            </div>
+            <div class="form-group col-md-4">
+              <input type="text" class="form-control" name="brand" id="brand" placeholder="Marca" required />
+            </div>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <input type="text" class="form-control" name="model" id="model" placeholder="Modelo" required/>
-          </div>
-          <div class="form-group col-md-4">
-            <input type="text" class="form-control" name="color" id="color" placeholder="Cor" required/>
-          </div>
-          <div class="form-group col-md-4">
-            <input type="text" class="form-control" name="brand" id="brand" placeholder="Marca" required/>
-          </div>
-        </div>
-        <button type="submit" id="btn-add-new" class="btn btn-primary">Adicionar Novo</button>
+          <button type="submit" id="btn-add-new" class="btn btn-primary">Salvar</button>
+        </fieldset>
       </form>
     </div>
+
     <div class="div-table">
       <table class="table">
         <thead class="thead-light">
           <tr>
-            <th>id</th>
             <th>Nome</th>
             <th>Tipo</th>
             <th>Modelo</th>
             <th>Cor</th>
             <th>Marca</th>
+            <th>Ações</th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
       </table>
     </div>
   </div>
+  <script src="./assets/js/sweetalert2@11.js"></script>
   <script src="./models/Device.js"></script>
   <script src="./repositories/DeviceRepository.js"></script>
   <script src="./repositories/DeviceGeneral.js"></script>
+
 </body>
 
 </html>

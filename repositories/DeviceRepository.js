@@ -8,57 +8,57 @@ class DeviceRepository {
         }
     }
 
-    _formatarDevices() {
+    _formatDevices() {
         let devicesJson = localStorage.getItem(this._deviceKey)
         let devicesSemClasse = JSON.parse(devicesJson)
         this._devices = devicesSemClasse.map(
-            device => new Device(device._id, device._name, device._type, device._model, device._color, device._brand)
+            device => new Device(device._name, device._type, device._model, device._color, device._brand)
         )
     }
 
-    salvarDevice(device) {
+    saveDevice(device) {
         if (device instanceof Device) {
 
-            this._formatarDevices()
+            this._formatDevices()
 
             this._devices.push(device)
             localStorage.setItem('devices', JSON.stringify(this._devices))
         }
     }
 
-    listarDevices() {
-        this._formatarDevices()
+    listDevices() {
+        this._formatDevices()
         return [...this._devices]
     }
 
-    filtrarDevicesPorAno(ano) {
-        this._formatarDevices()
+    getOneDevice(name) {
+        this._formatDevices()
 
-        this._devices.filter(device => device.getAno() === ano)
+        return this._devices.filter(device => device.getName() == name)
     }
 
-    removerDevice(id) {
+    removeDevice(name) {
         // Busca os devices do localstorage
-        this._formatarDevices()
+        this._formatDevices()
 
         // Remove o device dos nossos devices
-        this._devices = this._devices.filter(device => device.getId() !== id)
+        this._devices = this._devices.filter(device => device.getName() !== name)
 
         // Salva os devices no localstorage
         localStorage.setItem('devices', JSON.stringify(this._devices))
     }
 
-    editarDevice(novodevice) {
+    editDevice(newDevice) {
         // Busca os devices do localstorage
-        this._formatarDevices()
+        this._formatDevices()
 
         // Edita o device dos nossos devices
         // let index = this._devices.findIndex(device => device.getModelo() === novodevice.getModelo())
         // this._devices[index] = novodevice
 
         this._devices = this._devices.map(device => {
-            if (device.getModelo() === novodevice.getModelo()) {
-                return novodevice
+            if (device.getName() === newDevice.getName()) {
+                return newDevice
             } else {
                 return device
             }

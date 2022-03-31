@@ -1,8 +1,39 @@
 .div-form {
-    padding: 20px;
-  }
+  padding: 20px;
+}
 
-  .form-save {
-    display: flex;
-    flex-direction: column;
-  }
+.form-save {
+  display: flex;
+  flex-direction: column;
+}
+
+
+fieldset {
+  border: 1px solid #495057;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+fieldset legend {
+  width: 30%;
+}
+
+.cellaction {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-action {
+  display: flex;
+  align-items: center;
+
+  background-color: #FFFFFF;
+  border: 1px solid #dee2e6;
+  padding: 4px;
+}
+
+.btn-action:hover {
+  background-color: #dee2e6;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
