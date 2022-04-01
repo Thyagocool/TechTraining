@@ -3,6 +3,7 @@ const devices = repository.listDevices();
 
 function tableDevice() {
 
+    const devices = repository.listDevices();
     let tbody = document.getElementById("tbody");
 
     tbody.innerText = ""
